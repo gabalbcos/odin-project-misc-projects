@@ -1,6 +1,7 @@
 /* Make Board */
 
 let chessBoard = [];
+let alreadyVisited = [];
 let pair;
 
 function makeBoard() {
@@ -12,8 +13,8 @@ function makeBoard() {
   console.log(chessBoard);
 }
 
-function checkValidMovement(array) {
-  for(let coord of chessBoard) {
+function checkValidMovement(array, arrayToCheck) {
+  for(let coord of arrayToCheck) {
     if (coord[0] === array[0] && coord[1] === array[1]) {
       return true;
     }
@@ -24,9 +25,21 @@ function checkValidMovement(array) {
 function chooseXY() {
   let x = parseInt(prompt("add number 1-8 for x"));
   let y = parseInt(prompt("add number 1-8 for y"));
-  let pair = [x, y];
+  pair = [x, y];
 }
+
+
+
+
+
+
+
+
+
+
+
+
 
 makeBoard();
 chooseXY();
-console.log(checkValidMovement(pair));
+console.log(checkValidMovement(pair, chessBoard));
